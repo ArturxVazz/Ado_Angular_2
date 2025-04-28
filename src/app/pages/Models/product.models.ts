@@ -1,7 +1,10 @@
 export interface Product {
-    id?: number;
-    nome: string;
-    preco: number;
-    descricao: string;
-  }
-  
+  id?: number;
+  name: string;
+  description: string;
+  price: number;
+  imageUrl?: string;
+  quantity: number;
+  category: string;
+  dateAdded?: Date;
+}
