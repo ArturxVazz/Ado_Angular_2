@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 // import { catchError, tap } from 'rxjs/operators';
-import { Product } from '../pages/models/product.models';
+import { Product } from '../pages/Models/product.models';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +20,7 @@ export class ProductService {
   ];
   private lastId = 3;
 
-  constructor(private http: HttpClient) {
-    // Initialize with mock data
-    this.productsSubject.next(this.mockProducts);
-  }
+  constructor(private http: HttpClient) {}
 
   // Get all products
   getProducts(): Observable<Product[]> {

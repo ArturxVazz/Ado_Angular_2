@@ -1,0 +1,82 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 20px;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 16px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .product-card strong {
+    font-size: 1.1rem;
+  }
+  
+  .product-card button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  
+  .product-card button:hover {
+    background-color: #d5d5d5;
+  }
+  
+  .product-form {
+    margin-top: 16px;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .product-form input,
+  .product-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .product-form button {
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .product-form button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .product-form button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .product-form button[type="button"] {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .product-form button[type="button"]:hover {
+    background-color: #da190b;
+  }

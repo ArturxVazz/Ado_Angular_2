@@ -1,0 +1,19 @@
+<h2>Lista de Produtos</h2>
+
+<ul>
+  <li *ngFor="let product of products; index as i">
+    <div style="border: 1px solid #ccc; padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+      <strong>{{ product.name }}</strong> - {{ product.price }} <br>
+      {{ product.description }}
+
+      <div style="margin-top: 10px;">
+        <button (click)="deleteProduct(product.id!)">Excluir</button>
+        <button [routerLink]="['/update', product.id]">Atualizar</button>
+      </div>
+
+      <app-products-form *ngIf="productToEdit?.id === product.id" [product]="productToEdit"
+        (save)="onProductSaved($event)" (cancel)="onCancelEdit()">
+      </app-products-form>
+    </div>
+  </li>
+</ul>
