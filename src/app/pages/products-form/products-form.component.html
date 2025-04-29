@@ -2,13 +2,13 @@
 
 <form (ngSubmit)="addProduct()">
   <label>Nome:</label>
-  <input type="text" [(ngModel)]="product.nome" name="nome" required>
+  <input type="text" [(ngModel)]="product.name" name="nome" required>
 
   <label>Preço:</label>
-  <input type="number" [(ngModel)]="product.preco" name="preco" required>
+  <input type="number" [(ngModel)]="product.price" name="preco" required>
 
   <label>Descrição:</label>
-  <textarea [(ngModel)]="product.descricao" name="descricao" required></textarea>
+  <textarea [(ngModel)]="product.description" name="descricao" required></textarea>
 
   <button type="submit">Cadastrar</button>
 </form>

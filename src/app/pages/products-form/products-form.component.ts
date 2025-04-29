@@ -1,20 +1,24 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { Product } from '../../Models/product.models';
+import { Product } from '../models/product.models';
+import { FormsModule } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-products-form',
   templateUrl: './products-form.component.html',
+  imports: [FormsModule],
   styleUrls: ['./products-form.component.css']
 })
 export class ProductsFormComponent {
 
   product: Product = {
-    nome: '',
-    preco: 0,
-    descricao: ''
+    name: '',
+    price: 0,
+    description: '',
+    quantity:0,
+    category:''
   };
 
   constructor(private productService: ProductService) { }
@@ -28,9 +32,11 @@ export class ProductsFormComponent {
 
   clearForm() {
     this.product = {
-      nome: '',
-      preco: 0,
-      descricao: ''
+      name: '',
+      price: 0,
+      description: '',
+      quantity:0,
+      category:''
     };
   }
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { Product } from '../models/product.models';
+// import { catchError, tap } from 'rxjs/operators';
+import { Product } from '../pages/models/product.models';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class ProductService {
   private productsUrl = 'api/products'; // URL to web api (replace with your actual API endpoint)
   private productsSubject = new BehaviorSubject<Product[]>([]);
   products$ = this.productsSubject.asObservable();
-  
+
   // For demo purposes if no backend is available
   private mockProducts: Product[] = [
     { id: 1, name: 'Laptop', description: 'Powerful laptop for developers', price: 1299.99, quantity: 15, category: 'Electronics', imageUrl: 'https://placeholder.com/laptop.jpg', dateAdded: new Date() },
@@ -33,7 +33,7 @@ export class ProductService {
     //     tap(products => this.productsSubject.next(products)),
     //     catchError(this.handleError<Product[]>('getProducts', []))
     //   );
-    
+
     // For mock implementation:
     return of(this.mockProducts);
   }
@@ -45,7 +45,7 @@ export class ProductService {
     //   .pipe(
     //     catchError(this.handleError<Product>(`getProduct id=${id}`))
     //   );
-    
+
     // For mock implementation:
     const product = this.mockProducts.find(p => p.id === id);
     return of(product as Product);
@@ -62,7 +62,7 @@ export class ProductService {
     //     }),
     //     catchError(this.handleError<Product>('addProduct'))
     //   );
-    
+
     // For mock implementation:
     const newProduct = { ...product, id: ++this.lastId, dateAdded: new Date() };
     this.mockProducts.push(newProduct);
@@ -85,7 +85,7 @@ export class ProductService {
     //     }),
     //     catchError(this.handleError<Product>('updateProduct'))
     //   );
-    
+
     // For mock implementation:
     const index = this.mockProducts.findIndex(p => p.id === product.id);
     if (index !== -1) {
@@ -106,7 +106,7 @@ export class ProductService {
     //     }),
     //     catchError(this.handleError<void>('deleteProduct'))
     //   );
-    
+
     // For mock implementation:
     this.mockProducts = this.mockProducts.filter(p => p.id !== id);
     this.productsSubject.next([...this.mockProducts]);
